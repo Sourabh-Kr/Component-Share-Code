@@ -1,24 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Counter } from './component/Counter';
+import { ClickCounterTwo } from './component/ClickCounterTwo';
+import { HoverCounterTwo } from './component/HoverCounterTwo';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Counter render={(count,incrementCount)=>
+      <ClickCounterTwo count={count} incrementCount={incrementCount}/>}>
+      </Counter>
+      <Counter render={(count,incrementCount)=>
+      <HoverCounterTwo count={count} incrementCount={incrementCount}/>}>
+      </Counter>
+      
     </div>
   );
 }
